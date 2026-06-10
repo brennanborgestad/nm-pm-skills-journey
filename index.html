@@ -379,115 +379,34 @@ table.matrix col.skillcol { width: 32px; }
 }
 
 /* ============================================================
-   PRINT — compact paged document (~8 pages)
+   PRINT — clean paged document
    ============================================================ */
 @media print {
-  @page { size: Letter portrait; margin: 12mm 14mm; }
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: Letter portrait; margin: 14mm 12mm; }
   body { background: #fff; }
   .toolbar, .filterbar, .matrix-readout { display: none !important; }
   .sheet-wrap { padding: 0; }
   .sheet { max-width: none; box-shadow: none; border-radius: 0; }
-
-  /* --- Cover (page 1) --- */
-  .cover { padding: 32px 32px 24px; break-after: page; }
-  .cover h1 { font-size: 2.6rem; margin: 0 0 14px; }
-  .cover .sub { font-size: 1rem; margin: 0 0 24px; }
-  .cover .meta { padding-top: 16px; }
-  .cover .meta .k { font-size: 1.8rem; }
-  .cover .prepared { margin-top: 20px; }
-
-  /* --- Sections — shared compact baseline --- */
-  section.report-sec { padding: 18px 0 14px; border-top: 1px solid var(--ps-neutral-150); }
-  .sec-eyebrow { margin: 0 0 5px; }
-  .sec-title { font-size: 1.35rem; margin: 0 0 5px; }
-  .sec-lede { font-size: 0.86rem; line-height: 1.45; margin: 0; }
-
-  /* --- Intro (flows into coverage on page 2) --- */
-  .intro-grid { gap: 24px; }
-  .intro-body p { font-size: 0.86rem; line-height: 1.48; margin: 0 0 9px; }
-  .intro-body .lead { font-size: 0.98rem; line-height: 1.38; }
-  .legend { padding: 14px 16px; }
-  .legend .row { padding: 7px 0; }
-
-  /* --- Coverage --- */
-  .cov-build { margin-top: 16px; }
-  .cov-bar { height: 36px; }
-  .cov-steps { gap: 8px; margin-top: 12px; }
-  .step { padding: 10px 12px 9px; }
-  .step .snm { font-size: 0.84rem; }
-  .step .delta { margin-top: 4px; }
-  .step .run { font-size: 1.3rem; margin-top: 8px; }
-  .tier-cards { gap: 10px; margin-top: 14px; }
-  .tcard { padding: 12px 14px; }
-  .tcard .tname { font-size: 0.88rem; }
-  .tcard .tcount { font-size: 1.2rem; }
-  .tcard .ttrack span { font-size: 0.68rem; padding: 3px 8px; }
-  .ai-callout { margin-top: 14px; padding: 12px 16px; gap: 12px; }
-  .ai-callout .ico { width: 32px; height: 32px; border-radius: 8px; }
-  .ai-callout h4 { font-size: 0.9rem; }
-  .ai-callout p { font-size: 0.82rem; line-height: 1.45; }
-
-  /* --- Journey (page 3+) --- */
+  section.report-sec { padding: 26px 0; border-top: 1px solid var(--ps-neutral-150); break-inside: avoid-page; }
+  .cover { padding: 40px 32px; break-after: page; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cover h1 { font-size: 3rem; }
   #journey { break-before: page; }
-  .band.dim { opacity: 1 !important; }
-  .spine { padding-left: 26px; }
-  .spine::before { left: 7px; top: 12px; }
-  .band { margin-bottom: 16px; }
-  .band::before { left: -23px; width: 13px; height: 13px; top: 5px; }
-  .band-head { margin-bottom: 10px; gap: 10px; }
-  .band-head .arch { width: 22px; height: 26px; }
-  .band-head .ct { font-size: 1rem; }
-  .band-head .meta { font-size: 0.72rem; }
-  .band-head .cnt { font-size: 0.7rem; padding: 4px 10px; }
-
-  /* 2-column module grid keeps journey compact */
-  .mod-list { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .mod-card {
-    padding: 11px 13px;
-    grid-template-columns: 38px 1fr;
-    gap: 0 10px;
-    break-inside: avoid;
-  }
-  .mod-card .num { font-size: 1.35rem; }
-  .mod-card .num .lab { font-size: 0.52rem; margin-top: 3px; }
-  .mod-card .crumb { font-size: 0.58rem; margin: 0 0 3px; }
-  .mod-card h3 { font-size: 0.84rem; margin: 0 0 4px; line-height: 1.18; }
-  .mod-card p { font-size: 0.76rem; line-height: 1.38; margin: 0 0 7px; }
-  .mod-card .skills span { font-size: 0.63rem; padding: 3px 7px; }
-  .reinforce-strip { margin-top: 8px; padding: 7px 11px; gap: 5px; }
-  .reinforce-strip .rlab { font-size: 0.6rem; }
-  .reinforce-strip .rchip { font-size: 0.62rem; padding: 3px 7px; }
-
-  /* --- Matrix (own page) --- */
   #matrix { break-before: page; }
-  .matrix-scroll { overflow: visible; border: none; }
-  table.matrix col.labelcol { width: 142px; }
-  table.matrix col.skillcol { width: 21px; }
-  .matrix thead .skillrow th { height: 174px; }
-  .matrix thead .skillrow th .rot { font-size: 0.56rem; }
-  .matrix thead .skillrow th.corner { font-size: 0.54rem; padding-left: 10px; }
-  .matrix tbody .certlabel td { padding-left: 10px; }
-  .matrix tbody tr.modrow th { font-size: 0.6rem; padding: 0 6px 0 10px; max-width: 142px; }
-  .matrix tbody td.cell { height: 23px; }
-  .matrix tbody td.cell .mark { width: 10px; height: 10px; }
-  .matrix tbody tr.modrow.dim { opacity: 1 !important; }
-
-  /* --- By Skill (own page, 2-column layout) --- */
   #byskill { break-before: page; }
-  .skillgroup + .skillgroup { margin-top: 16px; }
-  .skillgroup { column-count: 2; column-gap: 28px; }
-  .skillgroup .gtitle { column-span: all; margin: 0 0 6px; }
-  .skillgroup .gtitle h3 { font-size: 1rem; }
-  .skill-row { padding: 6px 4px; break-inside: avoid; }
-  .skill-row .nm { font-size: 0.83rem; }
-  .skill-row .cnt { font-size: 0.67rem; }
-  .skill-row .track b { width: 21px; height: 21px; font-size: 0.63rem; }
-  .skill-row .lens-tag { font-size: 0.58rem; padding: 3px 7px; }
-
-  /* --- Footer --- */
-  .report-foot { padding: 16px 0 20px; }
-  .report-foot .tag { font-size: 0.76rem; }
+  .band, .mod-card, .skill-row, .tier, .gap-card, .skillgroup { break-inside: avoid; }
+  .band.dim, .matrix tbody tr.modrow.dim { opacity: 1 !important; }   /* never print dimmed */
+  .matrix-scroll { overflow: visible; border: none; }
+  table.matrix { font-size: 0.6rem; }
+  table.matrix col.labelcol { width: 152px; }
+  table.matrix col.skillcol { width: 23px; }
+  .matrix tbody tr.modrow th { font-size: 0.66rem; padding: 0 8px 0 12px; max-width: 152px; }
+  .matrix thead .skillrow th .rot { font-size: 0.6rem; }
+  .matrix thead .skillrow th.corner { font-size: 0.58rem; padding-left: 12px; }
+  .matrix tbody .certlabel td { padding-left: 12px; }
+  .matrix thead .skillrow th { height: 196px; }
+  .matrix tbody td.cell { height: 26px; }
+  .matrix tbody td.cell .mark { width: 11px; height: 11px; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
 </style>
