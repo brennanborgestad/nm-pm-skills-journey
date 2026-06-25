@@ -363,6 +363,69 @@ table.matrix col.skillcol { width: 32px; }
   letter-spacing: 0.06em; color: var(--ps-accent1-500); background: var(--ps-accent1-50); border: 1px solid var(--ps-accent1-100);
   padding: 4px 10px; border-radius: 99px; white-space: nowrap; }
 
+/* ---------------- Phased Delivery / Delivery Model ---------------- */
+.ph-bar { display: flex; height: 14px; border-radius: 99px; overflow: hidden; margin: 40px 0 0; gap: 2px; }
+.ph-bar-seg { background: var(--ph-c); flex: 0 0 0; min-width: 0; }
+.ph-bar-inf { background: var(--ps-neutral-150); border-radius: 0 99px 99px 0; width: 32px; flex: none;
+  display: flex; align-items: center; justify-content: center; font-family: var(--ps-font-secondary);
+  font-weight: 700; font-size: 0.78rem; color: var(--ps-neutral-300); }
+.ph-cards { display: flex; gap: 10px; margin-top: 10px; align-items: stretch; }
+.ph-card { flex: 0 0 0; background: #fff; border: 1px solid var(--ps-neutral-100);
+  border-top: 3px solid var(--ph-c); border-radius: 12px; padding: 18px 18px 16px; }
+.ph-card-hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 7px; }
+.ph-n { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ph-c); }
+.ph-dur { font-size: 0.68rem; color: var(--ps-neutral-300); font-family: var(--ps-font-secondary); font-weight: 700; white-space: nowrap; }
+.ph-label { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 1rem; color: var(--ps-primary-400);
+  line-height: 1.2; margin-bottom: 5px; }
+.ph-focus { font-size: 0.68rem; font-family: var(--ps-font-secondary); font-weight: 700; color: var(--ph-c);
+  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; line-height: 1.3; }
+.ph-cert { font-size: 0.76rem; color: var(--ps-neutral-400); line-height: 1.45; margin-bottom: 10px; }
+.ph-mod { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.64rem;
+  background: var(--ph-t); color: var(--ph-c); border-radius: 99px; padding: 3px 8px; margin-right: 6px; white-space: nowrap; }
+.ph-bullets { margin: 0; padding: 0 0 0 14px; }
+.ph-bullets li { font-size: 0.76rem; line-height: 1.5; color: var(--ps-neutral-400); padding: 1px 0; }
+.ph-gate { display: inline-block; font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.07em; color: var(--ps-primary-300); background: var(--ps-primary-50);
+  border: 1px solid var(--ps-primary-100); border-radius: 99px; padding: 4px 10px; margin-top: 14px; }
+.dm-eyebrow { margin-top: 48px !important; }
+.dm-h3 { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 1.4rem; color: var(--ps-primary-400);
+  letter-spacing: -0.01em; margin: 6px 0 8px; line-height: 1.2; }
+.dm-sub { font-size: 0.96rem; line-height: 1.6; color: var(--ps-neutral-400); margin: 0 0 24px; max-width: 72ch; }
+.dm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.dm-card { background: var(--ps-neutral-25); border: 1px solid var(--ps-neutral-100); border-radius: 14px; padding: 22px 20px; }
+.dm-card-hi { background: var(--ps-primary-50); border-color: var(--ps-primary-100); }
+.dm-ico { width: 40px; height: 40px; border-radius: 10px; background: #fff; display: flex; align-items: center;
+  justify-content: center; color: var(--ps-primary-300); margin-bottom: 14px; border: 1px solid var(--ps-neutral-100); flex: none; }
+.dm-card-hi .dm-ico { border-color: var(--ps-primary-100); }
+.dm-type { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.66rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ps-neutral-300); margin-bottom: 4px; }
+.dm-card-hi .dm-type { color: var(--ps-primary-300); }
+.dm-name { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 1.05rem; color: var(--ps-primary-400);
+  line-height: 1.2; margin-bottom: 11px; }
+.dm-body { font-size: 0.86rem; line-height: 1.58; color: var(--ps-neutral-400); margin: 0 0 14px; }
+.dm-chips { display: flex; flex-direction: column; gap: 5px; }
+.dm-chips span { font-family: var(--ps-font-secondary); font-weight: 600; font-size: 0.72rem;
+  padding: 5px 11px; border-radius: 8px; background: #fff; border: 1px solid var(--ps-neutral-100); color: var(--ps-neutral-500); }
+.dm-card-hi .dm-chips span { border-color: var(--ps-primary-100); }
+.ev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+.ev-card { background: #fff; border: 1px solid var(--ps-neutral-100); border-radius: 14px; padding: 26px 24px; }
+.ev-card-dark { background: var(--ps-primary-400); border-color: var(--ps-primary-400); }
+.ev-tier { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.66rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ps-neutral-300); margin-bottom: 8px; }
+.ev-card-dark .ev-tier { color: rgba(255,255,255,0.5); }
+.ev-name { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 1.35rem; color: var(--ps-primary-400);
+  letter-spacing: -0.01em; margin: 0 0 12px; line-height: 1.15; }
+.ev-card-dark .ev-name { color: #fff; }
+.ev-body { font-size: 0.9rem; line-height: 1.6; color: var(--ps-neutral-400); margin: 0 0 18px; }
+.ev-card-dark .ev-body { color: rgba(255,255,255,0.8); }
+.ev-list { display: flex; flex-direction: column; gap: 10px; }
+.ev-list div { display: grid; grid-template-columns: 70px 1fr; gap: 12px; font-size: 0.82rem; line-height: 1.5; color: var(--ps-neutral-500); }
+.ev-list span { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--ps-neutral-300); padding-top: 2px; }
+.ev-card-dark .ev-list div { color: rgba(255,255,255,0.85); }
+.ev-card-dark .ev-list span { color: rgba(255,255,255,0.5); }
+
 /* ---------------- Footer ---------------- */
 .report-foot { padding: 40px var(--pad-x) 54px; border-top: 1px solid var(--gap-line);
   display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -393,6 +456,8 @@ table.matrix col.skillcol { width: 32px; }
   #journey { break-before: page; }
   #matrix { break-before: page; }
   #byskill { break-before: page; }
+  #delivery { break-before: page; }
+  .ph-cards, .dm-grid, .ev-grid { break-inside: avoid; }
   .band, .mod-card, .skill-row, .tier, .gap-card, .skillgroup { break-inside: avoid; }
   .band.dim, .matrix tbody tr.modrow.dim { opacity: 1 !important; }   /* never print dimmed */
   .matrix-scroll { overflow: visible; border: none; }
@@ -975,12 +1040,165 @@ Object.assign(window, { Matrix, SkillFirst });
 /* global React, ReactDOM, Cover, Intro, CoverageSummary, Journey, Matrix, SkillFirst, CERT_ORDER */
 // NM Skills Journey — app shell: toolbar, certification filter state, scroll-spy.
 
+/* ============================================================
+   Delivery Model — phased delivery, delivery modes, evidence.
+   ============================================================ */
+const DELIVERY_PHASES = [
+  {
+    n: 1, label: "Day 1 Ready", months: 3, note: "pre go-live",
+    color: "var(--ps-primary-300)", tint: "var(--ps-primary-50)",
+    cert: "Product Management Certification", modules: 6,
+    focus: "Capability Set 1 — Anchors Leadership",
+    bullets: ["Complete PM Certification", "Apply learning to product work", "Build core PM artifacts"],
+    gate: "Set 1 Gate",
+  },
+  {
+    n: 2, label: "In-Role Stability", months: 3, note: "post go-live",
+    color: "var(--ps-accent1-400)", tint: "var(--ps-accent1-50)",
+    cert: "Coaching + applied practice", modules: null,
+    focus: "Stabilization",
+    bullets: ["Execute in-role on live products", "Coaching reinforces Set 1 skills", "Identify and close gaps"],
+    gate: null,
+  },
+  {
+    n: 3, label: "Predictable Delivery", months: 6, note: null,
+    color: "var(--ps-accent4-400)", tint: "var(--ps-accent4-50)",
+    cert: "Product Leadership + AI PM Certification", modules: 12,
+    focus: "Capability Set 2 — Drives Execution",
+    bullets: ["Expand capability beyond Day 1", "Strengthen delivery discipline", "Apply AI across the PM lifecycle"],
+    gate: "Set 2 Gate",
+  },
+  {
+    n: 4, label: "Scaled Impact", months: 3, note: null,
+    color: "var(--ps-accent3-400)", tint: "var(--ps-accent3-50)",
+    cert: "AI Evals Certification (2 targeted modules)", modules: 2,
+    focus: "Capability Set 3 — Enables Scale",
+    bullets: ["Responsible AI embedded in practice", "Coaching and mentoring at scale", "System-level product impact"],
+    gate: "Set 3 Gate",
+  },
+];
+
+function DeliveryModel() {
+  return (
+    <section className="report-sec" id="delivery" data-screen-label="Delivery model">
+      <p className="sec-eyebrow">Phased delivery</p>
+      <h2 className="sec-title">How the program runs</h2>
+      <p className="sec-lede">A 15-month capability arc anchored to NM's stage timeline — not a training calendar. Three delivery modes run in parallel throughout. Phase gates are earned by demonstrated capability, not course completion.</p>
+
+      {/* Phase progress bar */}
+      <div className="ph-bar">
+        {DELIVERY_PHASES.map((p) => (
+          <div key={p.n} className="ph-bar-seg" style={{ "--ph-c": p.color, flexGrow: p.months }}></div>
+        ))}
+        <div className="ph-bar-inf">∞</div>
+      </div>
+
+      {/* Phase cards */}
+      <div className="ph-cards">
+        {DELIVERY_PHASES.map((p) => (
+          <div key={p.n} className="ph-card" style={{ "--ph-c": p.color, "--ph-t": p.tint, flexGrow: p.months }}>
+            <div className="ph-card-hd">
+              <span className="ph-n">Phase {p.n}</span>
+              <span className="ph-dur">{p.months} mo{p.note ? ` · ${p.note}` : ""}</span>
+            </div>
+            <div className="ph-label">{p.label}</div>
+            <div className="ph-focus">{p.focus}</div>
+            <div className="ph-cert">
+              {p.modules && <span className="ph-mod">{p.modules} mod{p.modules > 1 ? "s" : ""}</span>}
+              {p.cert}
+            </div>
+            <ul className="ph-bullets">
+              {p.bullets.map((b, i) => <li key={i}>{b}</li>)}
+            </ul>
+            {p.gate && <div className="ph-gate">{p.gate}</div>}
+          </div>
+        ))}
+      </div>
+
+      {/* Delivery modes */}
+      <p className="sec-eyebrow dm-eyebrow">Delivery model</p>
+      <h3 className="dm-h3">Three modes, running in parallel throughout</h3>
+      <p className="dm-sub">Capability transfers through immersive instruction, in-role coaching, and always-available self-serve resources — not training for training's sake.</p>
+      <div className="dm-grid">
+        <div className="dm-card">
+          <div className="dm-ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <div className="dm-type">Instructor-led</div>
+          <div className="dm-name">Product School Certifications</div>
+          <p className="dm-body">Immersive, cohort-based learning applied directly to real PM work. Short sprints with group projects, labs, and role-playing scenarios ensure capability transfers into practice — not just knowledge retained.</p>
+          <div className="dm-chips">
+            <span>20 modules · 4 certifications</span>
+            <span>Applied to live NM product work</span>
+            <span>Homework and projects between sessions</span>
+          </div>
+        </div>
+        <div className="dm-card dm-card-hi">
+          <div className="dm-ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+          </div>
+          <div className="dm-type">Coaching</div>
+          <div className="dm-name">Embedded Product Leaders</div>
+          <p className="dm-body">Experienced Product School coaches embedded alongside NM PMs — reinforcing skills in-role, tied to real decisions and live product work. 1:1 and group sessions feed directly into gate assessments and close capability gaps before they compound.</p>
+          <div className="dm-chips">
+            <span>1:1 and group coaching sessions</span>
+            <span>Tied to real NM product decisions</span>
+            <span>Input to gate assessments</span>
+            <span>Targeted gap plans when needed</span>
+          </div>
+        </div>
+        <div className="dm-card">
+          <div className="dm-ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div className="dm-type">Self-serve</div>
+          <div className="dm-name">Always-on Learning Resources</div>
+          <p className="dm-body">Curated learning paths, reference content, and AI-powered practice tools available on demand. Supports reinforcement between sessions, remediation for PMs building toward a gate, and ongoing learning in the continuous phase.</p>
+          <div className="dm-chips">
+            <span>Curated paths by Capability Set</span>
+            <span>AI-assisted practice tools</span>
+            <span>Remediation tracks post-gate</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Evidence of capability */}
+      <p className="sec-eyebrow dm-eyebrow">Evidence of capability</p>
+      <h3 className="dm-h3">Proving proficiency — not just attendance</h3>
+      <p className="dm-sub">Completing a module is the floor, not the bar. Two options for structuring how NM PMs demonstrate capability at each phase gate.</p>
+      <div className="ev-grid">
+        <div className="ev-card">
+          <div className="ev-tier">Core offering</div>
+          <h4 className="ev-name">Capstone Projects</h4>
+          <p className="ev-body">At the close of each certification phase, PMs produce a structured artifact drawn from their live NM product work — not a hypothetical. The output is both a practical deliverable and the primary evidence reviewed at the phase gate, assessed by Practice Leaders with coach input.</p>
+          <div className="ev-list">
+            <div><span>Phase 1</span>Product vision, prioritized backlog, stakeholder plan</div>
+            <div><span>Phase 3</span>Execution playbook, AI-assisted analysis, portfolio trade-off rationale</div>
+            <div><span>Phase 4</span>Responsible AI practice plan, scale and mentoring strategy</div>
+          </div>
+        </div>
+        <div className="ev-card ev-card-dark">
+          <div className="ev-tier">Premium offering</div>
+          <h4 className="ev-name">Business Case Competition</h4>
+          <p className="ev-body">PMs present a structured business case to a senior NM leadership panel at phase gates — not just their manager or coach. High stakes by design: demonstrating the judgment, strategic communication, and decision quality the role actually demands. Winning submissions feed directly into NM product roadmap decisions.</p>
+          <div className="ev-list">
+            <div><span>Format</span>Live presentation to a senior leadership panel</div>
+            <div><span>Scoring</span>Strategic clarity, decision quality, stakeholder communication</div>
+            <div><span>Impact</span>Organizational visibility for standout PMs; submissions inform real roadmap decisions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const NAV = [
   { id: "overview", label: "Overview" },
   { id: "coverage", label: "Coverage" },
   { id: "journey", label: "Journey" },
   { id: "matrix", label: "Matrix" },
   { id: "byskill", label: "By skill" },
+  { id: "delivery", label: "Delivery" },
 ];
 
 function smoothTo(id) {
@@ -1052,6 +1270,7 @@ function App() {
           <Journey active={active} />
           <Matrix active={active} />
           <SkillFirst active={active} />
+          <DeliveryModel />
           <footer className="report-foot">
             <div className="l">
               <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNzkiIHZpZXdCb3g9IjAgMCA2NCA3OSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01OS43MzMxIDQuMjAwMDVINC4yNjY5NFY0Ny4yNjE1QzQuMjY2OTQgNjIuMzQyMyAxNi42ODMzIDc0LjU2NzkgMzEuOTk5MyA3NC41Njc5QzQ3LjMxNjcgNzQuNTY3OSA1OS43MzMxIDYyLjM0MjMgNTkuNzMzMSA0Ny4yNjE1VjQuMjAwMDVaTTMxLjk5OTMgNzguNzY5MkMxNC4zNTYyIDc4Ljc2OTIgMCA2NC42MzQ5IDAgNDcuMjYxNVYwSDY0VjQ3LjI2MTVDNjQgNjQuNjM0OSA0OS42NDUxIDc4Ljc2OTIgMzEuOTk5MyA3OC43NjkyWk0yOC42NTcgMTguMzM0MkMyMi43NTE2IDIwLjA3MDUgMTguNDMxOSAyNS40NjIzIDE4LjQzMTkgMzEuODM0VjQ2LjkzNDhDMTguNDMxOSA1My4zMDY2IDIyLjc1MTYgNTguNjk3MSAyOC42NTcgNjAuNDM2VjE4LjMzNDJaTTQ3LjA2MSAzMS44MzRDNDcuMDYxIDI0LjA2MiA0MC42MzkxIDE3Ljc0IDMyLjc0NTggMTcuNzRWNDUuOTI4QzQwLjYzOTEgNDUuOTI4IDQ3LjA2MSAzOS42MDYxIDQ3LjA2MSAzMS44MzRaTTMyLjc0NTggNjEuMDI4OFY2NS4wNTYxQzIyLjU5ODUgNjUuMDU2MSAxNC4zNDE4IDU2LjkyNzUgMTQuMzQxOCA0Ni45MzM2VjMxLjgzNEMxNC4zNDE4IDIxLjgyNiAyMi41ODE2IDEzLjcxMTUgMzIuNzQ1OCAxMy43MTE1QzQyLjkxMTIgMTMuNzExNSA1MS4xNTEgMjEuODI2IDUxLjE1MSAzMS44MzRDNTEuMTUxIDQxLjg0MiA0Mi45MTEyIDQ5Ljk1NjUgMzIuNzQ1OCA0OS45NTY1VjYxLjAyODhaIiBmaWxsPSIjMDcxODJDIj48L3BhdGg+Cjwvc3ZnPg==" width="22" height="25" alt=""/>
