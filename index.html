@@ -518,9 +518,14 @@ table.matrix col.skillcol { width: 32px; }
   border-top: 3px solid var(--ps-accent1-300);
   border-radius: 14px; padding: 24px 26px;
 }
+.prop-prior-stat .event {
+  font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--ps-accent1-400);
+  margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--ps-neutral-100);
+}
 .prop-prior-stat .k {
   font-family: var(--ps-font-secondary); font-weight: 700; font-size: 2.8rem;
-  line-height: 1; color: var(--ps-accent1-400); letter-spacing: -0.02em;
+  line-height: 1; color: var(--ps-primary-400); letter-spacing: -0.02em;
 }
 .prop-prior-stat .l { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ps-neutral-300); margin-top: 8px; }
 .prop-prior-stat .note { font-size: 0.88rem; color: var(--ps-neutral-400); margin-top: 10px; line-height: 1.5; }
@@ -1159,9 +1164,9 @@ function ProposalView() {
           <div className="glow"></div>
           <div className="glow2"></div>
           <div className="inner">
-            <p className="eyebrow">Product School — Proposal</p>
+            <p className="eyebrow">Product School / Proposal</p>
             <h1>Northwestern <em>Mutual</em></h1>
-            <p className="sub">Product Management Development Program — a year-long, virtual curriculum mapped to all 23 of Northwestern Mutual's product management competency skills.</p>
+            <p className="sub">Product Management Development Program. A year-long, virtual curriculum mapped to all 23 of Northwestern Mutual's product management competency skills.</p>
             <div className="meta">
               <div className="item"><div className="k">300</div><div className="l">Participants</div></div>
               <div className="item"><div className="k">$1.575M</div><div className="l">Total Investment</div></div>
@@ -1174,17 +1179,19 @@ function ProposalView() {
         <div className="prop-prior">
           <p className="sec-eyebrow">Prior Partnership</p>
           <h2 className="sec-title">Northwestern Mutual and Product School go back</h2>
-          <p className="sec-lede">Following NM's acquisition of LearnVest, Product School partnered with Northwestern Mutual to unify product management practices across New York and Milwaukee — bridging traditional and agile methodologies at scale. Most recently, 30+ NM participants joined us at ProductCon New York in May 2026.</p>
+          <p className="sec-lede">Following NM's acquisition of LearnVest, Product School partnered with Northwestern Mutual to unify product management practices across New York and Milwaukee, bridging traditional and agile methodologies at scale. Most recently, 30+ NM participants joined us at ProductCon New York in May 2026.</p>
           <div className="prop-prior-stats">
             <div className="prop-prior-stat">
+              <div className="event">2018 Training Engagement</div>
               <div className="k">4,000%</div>
               <div className="l">Improvement in quarterly releases</div>
-              <div className="note">Quarterly product releases grew from ~50 to over 2,000 following Product School's engagement</div>
+              <div className="note">Quarterly product releases grew from approximately 50 to over 2,000 following Product School's engagement with NM post-LearnVest acquisition</div>
             </div>
             <div className="prop-prior-stat">
+              <div className="event">ProductCon New York, May 2026</div>
               <div className="k">30+</div>
-              <div className="l">NM Participants at ProductCon NY</div>
-              <div className="note">Northwestern Mutual team members joined Product School at ProductCon New York, May 2026</div>
+              <div className="l">NM Participants</div>
+              <div className="note">Northwestern Mutual team members joined Product School at ProductCon New York in May 2026</div>
             </div>
           </div>
           <div className="prop-prior-quote">
@@ -1207,7 +1214,7 @@ function ProposalView() {
             <div className="cstat"><div className="k">2M+</div><div className="l">Product professionals in our community</div></div>
             <div className="cstat"><div className="k">500+</div><div className="l">Enterprise clients trained</div></div>
           </div>
-          <p className="prop-cred-sub">We've enabled Fortune 500 companies — including leading financial services institutions — to build product teams that drive measurable business outcomes.</p>
+          <p className="prop-cred-sub">We've enabled Fortune 500 companies, including leading financial services institutions, to build product teams that drive measurable business outcomes.</p>
           <div className="prop-logo-grid">
             <div className="prop-logo-tile featured">Vanguard</div>
             <div className="prop-logo-tile featured">Visa</div>
@@ -1234,7 +1241,7 @@ function ProposalView() {
               </div>
               <div className="prop-cv-item">
                 <p className="ci-title">AI Adoption in a Regulated Industry</p>
-                <p className="ci-body">Building AI-native product thinking requires structured enablement — especially in financial services where compliance shapes every product decision.</p>
+                <p className="ci-body">Building AI-native product thinking requires structured enablement, especially in financial services where compliance shapes every product decision.</p>
               </div>
               <div className="prop-cv-item">
                 <p className="ci-title">Proving ROI on L&amp;D Investment</p>
@@ -1245,15 +1252,15 @@ function ProposalView() {
               <h3>The Vision</h3>
               <div className="prop-cv-item">
                 <p className="ci-title">A Shared PM Language, at Scale</p>
-                <p className="ci-body">Cohort-based delivery across 3 batches creates a shared standard — the same frameworks, vocabulary, and expectations across all 300 participants.</p>
+                <p className="ci-body">Cohort-based delivery across 3 batches creates a shared standard: the same frameworks, vocabulary, and expectations across all 300 participants.</p>
               </div>
               <div className="prop-cv-item">
                 <p className="ci-title">Skills-First, AI Woven Throughout</p>
-                <p className="ci-body">Every module maps directly to NM's 23 defined competency skills. AI is integrated across the full curriculum — not bolted on as a separate track.</p>
+                <p className="ci-body">Every module maps directly to NM's 23 defined competency skills. AI is integrated across the full curriculum, not bolted on as a separate track.</p>
               </div>
               <div className="prop-cv-item">
                 <p className="ci-title">Measurable Against NM's Own Model</p>
-                <p className="ci-body">Demo days and coaching sessions produce observable outcomes — measurable against the same 23-skill competency framework NM already uses internally.</p>
+                <p className="ci-body">Demo days and coaching sessions produce observable outcomes, measurable against the same 23-skill competency framework NM already uses internally.</p>
               </div>
             </div>
           </div>
@@ -1265,7 +1272,7 @@ function ProposalView() {
           <div className="prop-feature-grid">
             <div className="prop-feature-card">
               <p className="fc-title">Senior Product Leaders</p>
-              <p className="fc-body">Learn from practitioners who have built and scaled products at companies like Uber, Google, Goldman Sachs, and Amazon — not career educators.</p>
+              <p className="fc-body">Learn from practitioners who have built and scaled products at companies like Uber, Google, Goldman Sachs, and Amazon. Not career educators.</p>
             </div>
             <div className="prop-feature-card">
               <p className="fc-title">Mapped to NM's 23 Skills</p>
@@ -1273,11 +1280,11 @@ function ProposalView() {
             </div>
             <div className="prop-feature-card">
               <p className="fc-title">Embedded Coaching</p>
-              <p className="fc-body">Group coaching sessions run between every training module — applied to real work happening inside NM, not hypothetical case studies.</p>
+              <p className="fc-body">Group coaching sessions run between every training module, applied to real work happening inside NM, not hypothetical case studies.</p>
             </div>
             <div className="prop-feature-card">
               <p className="fc-title">ProductCon Access</p>
-              <p className="fc-body">Participants get exclusive access to ProductCon — Product School's flagship conference — for external benchmarking and networking with global product leaders.</p>
+              <p className="fc-body">Participants get exclusive access to ProductCon, Product School's flagship conference, for external benchmarking and networking with global product leaders.</p>
             </div>
           </div>
         </div>
@@ -1350,7 +1357,7 @@ function ProposalView() {
           <h2 className="sec-title">Pricing</h2>
           <div className="prop-price-card">
             <div className="lhs">
-              <p className="pc-eyebrow">Full Program — 300 Participants</p>
+              <p className="pc-eyebrow">Full Program. 300 Participants</p>
               <h3>Product Management Development Program</h3>
               <p>Includes all live training, demo days, coaching sessions, session recordings, and on-demand content access.</p>
             </div>
