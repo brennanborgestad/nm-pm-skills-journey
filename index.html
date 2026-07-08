@@ -505,6 +505,45 @@ table.matrix col.skillcol { width: 32px; }
   font-size: 0.92rem; line-height: 1.55; color: var(--ps-accent1-500); }
 .prop-incl strong { font-family: var(--ps-font-secondary); font-weight: 700; }
 
+/* --- Prior Partnership section --- */
+.prop-prior {
+  padding: 64px var(--pad-x);
+  background: var(--ps-light);
+  border-top: 1px solid var(--gap-line);
+}
+.prop-prior-stats { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.prop-prior-stat {
+  flex: 1; min-width: 180px;
+  background: var(--ps-neutral-25); border: 1px solid var(--ps-neutral-100);
+  border-top: 3px solid var(--ps-accent1-300);
+  border-radius: 14px; padding: 24px 26px;
+}
+.prop-prior-stat .k {
+  font-family: var(--ps-font-secondary); font-weight: 700; font-size: 2.8rem;
+  line-height: 1; color: var(--ps-accent1-400); letter-spacing: -0.02em;
+}
+.prop-prior-stat .l { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ps-neutral-300); margin-top: 8px; }
+.prop-prior-stat .note { font-size: 0.88rem; color: var(--ps-neutral-400); margin-top: 10px; line-height: 1.5; }
+.prop-prior-quote {
+  margin-top: 20px;
+  background: var(--ps-primary-500); color: var(--ps-light);
+  border-radius: 14px; padding: 36px 40px;
+  position: relative;
+}
+.prop-prior-quote .pq-mark {
+  font-family: var(--ps-font-secondary); font-weight: 700; font-size: 4rem;
+  line-height: 0.8; color: var(--ps-accent1-300); position: absolute; top: 28px; left: 38px;
+  user-select: none;
+}
+.prop-prior-quote .pq-text {
+  font-family: var(--ps-font-secondary); font-weight: 700; font-size: 1.18rem;
+  line-height: 1.5; color: var(--ps-light); margin: 0 0 22px; padding-left: 28px;
+  letter-spacing: -0.01em;
+}
+.prop-prior-quote .pq-attr { display: flex; align-items: center; gap: 14px; padding-left: 28px; }
+.prop-prior-quote .pq-name { font-family: var(--ps-font-secondary); font-weight: 700; font-size: 0.92rem; color: var(--ps-light); }
+.prop-prior-quote .pq-role { font-size: 0.82rem; color: rgba(252,252,252,0.5); margin-top: 2px; }
+
 /* --- Why Product School (dark credibility section) --- */
 .prop-cred {
   background: var(--ps-primary-400); color: var(--ps-light);
@@ -1128,6 +1167,34 @@ function ProposalView() {
               <div className="item"><div className="k">$1.575M</div><div className="l">Total Investment</div></div>
               <div className="item"><div className="k">42 wks</div><div className="l">Per Batch</div></div>
               <div className="item"><div className="k">23</div><div className="l">NM Skills Covered</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="prop-prior">
+          <p className="sec-eyebrow">Prior Partnership</p>
+          <h2 className="sec-title">Northwestern Mutual and Product School go back</h2>
+          <p className="sec-lede">Following NM's acquisition of LearnVest, Product School partnered with Northwestern Mutual to unify product management practices across New York and Milwaukee — bridging traditional and agile methodologies at scale. Most recently, 30+ NM participants joined us at ProductCon New York in May 2026.</p>
+          <div className="prop-prior-stats">
+            <div className="prop-prior-stat">
+              <div className="k">4,000%</div>
+              <div className="l">Improvement in quarterly releases</div>
+              <div className="note">Quarterly product releases grew from ~50 to over 2,000 following Product School's engagement</div>
+            </div>
+            <div className="prop-prior-stat">
+              <div className="k">30+</div>
+              <div className="l">NM Participants at ProductCon NY</div>
+              <div className="note">Northwestern Mutual team members joined Product School at ProductCon New York, May 2026</div>
+            </div>
+          </div>
+          <div className="prop-prior-quote">
+            <div className="pq-mark">"</div>
+            <p className="pq-text">The customized training from Product School not only aligned our teams but also accelerated our pace of innovation significantly. It transformed the way we think about product management, creating a unified approach across our entire organization.</p>
+            <div className="pq-attr">
+              <div>
+                <div className="pq-name">Vivek Bedi</div>
+                <div className="pq-role">Head of Consumer Digital Products, Northwestern Mutual</div>
+              </div>
             </div>
           </div>
         </div>
