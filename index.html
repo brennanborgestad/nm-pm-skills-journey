@@ -1176,9 +1176,9 @@ function ProgramTimeline() {
   ];
 
   const phases = [
-    { label: "PM Foundations",   color: "#1A2B6B" },
-    { label: "AI in Product",    color: "#1397A8" },
+    { label: "Core Skills",        color: "#1A2B6B" },
     { label: "Product Leadership", color: "#6767E5" },
+    { label: "Scale & AI",         color: "#1397A8" },
   ];
 
   // ── Week-by-week detail (Batch 1) ─────────────────────────────
@@ -1196,9 +1196,9 @@ function ProgramTimeline() {
   };
 
   const courses = [
-    { label: "PM Foundations",   span: "Weeks 1–14",  color: "#1A2B6B", tint: "rgba(26,43,107,0.07)",   ring: "rgba(26,43,107,0.18)",   weeks: buildCourse(0) },
-    { label: "AI in Product",    span: "Weeks 15–28", color: "#1397A8", tint: "rgba(19,151,168,0.07)",  ring: "rgba(19,151,168,0.18)",  weeks: buildCourse(1) },
-    { label: "Product Leadership", span: "Weeks 29–42", color: "#6767E5", tint: "rgba(103,103,229,0.07)", ring: "rgba(103,103,229,0.18)", weeks: buildCourse(2) },
+    { label: "Phase 1: Core Skills",        span: "Weeks 1–14",  color: "#1A2B6B", tint: "rgba(26,43,107,0.07)",   ring: "rgba(26,43,107,0.18)",   weeks: buildCourse(0) },
+    { label: "Phase 2: Product Leadership", span: "Weeks 15–28", color: "#6767E5", tint: "rgba(103,103,229,0.07)", ring: "rgba(103,103,229,0.18)", weeks: buildCourse(1) },
+    { label: "Phase 3: Scale & AI",         span: "Weeks 29–42", color: "#1397A8", tint: "rgba(19,151,168,0.07)",  ring: "rgba(19,151,168,0.18)",  weeks: buildCourse(2) },
   ];
 
   const cellStyle = (w, c) => {
@@ -1540,7 +1540,7 @@ function ProposalView() {
         <div className="prop-sec">
           <p className="sec-eyebrow">Program Timeline</p>
           <h2 className="sec-title">What the program looks like in practice</h2>
-          <p className="sec-lede">Three batches of 100, each running 42 weeks. Training every other week, coaching in between, and a Capstone Demo Day at the close of each course.</p>
+          <p className="sec-lede">Three batches of 100, each running 42 weeks across NM's three phases: Core Skills, Product Leadership, and Scale and AI. Training every other week, coaching in between, and a Capstone Demo Day at the close of each phase.</p>
           <ProgramTimeline />
         </div>
 
