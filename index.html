@@ -1176,9 +1176,9 @@ function ProgramTimeline() {
   ];
 
   const phases = [
-    { label: "PMC",  color: "#1A2B6B" },
-    { label: "AIPC", color: "#1397A8" },
-    { label: "PLC",  color: "#6767E5" },
+    { label: "PM Foundations",   color: "#1A2B6B" },
+    { label: "AI in Product",    color: "#1397A8" },
+    { label: "Product Leadership", color: "#6767E5" },
   ];
 
   // ── Week-by-week detail (Batch 1) ─────────────────────────────
@@ -1196,9 +1196,9 @@ function ProgramTimeline() {
   };
 
   const courses = [
-    { label: "Course 1: PMC",  span: "Weeks 1–14",   color: "#1A2B6B", tint: "rgba(26,43,107,0.07)",  ring: "rgba(26,43,107,0.18)",  weeks: buildCourse(0) },
-    { label: "Course 2: AIPC", span: "Weeks 15–28",  color: "#1397A8", tint: "rgba(19,151,168,0.07)", ring: "rgba(19,151,168,0.18)", weeks: buildCourse(1) },
-    { label: "Course 3: PLC",  span: "Weeks 29–42",  color: "#6767E5", tint: "rgba(103,103,229,0.07)",ring: "rgba(103,103,229,0.18)",weeks: buildCourse(2) },
+    { label: "PM Foundations",   span: "Weeks 1–14",  color: "#1A2B6B", tint: "rgba(26,43,107,0.07)",   ring: "rgba(26,43,107,0.18)",   weeks: buildCourse(0) },
+    { label: "AI in Product",    span: "Weeks 15–28", color: "#1397A8", tint: "rgba(19,151,168,0.07)",  ring: "rgba(19,151,168,0.18)",  weeks: buildCourse(1) },
+    { label: "Product Leadership", span: "Weeks 29–42", color: "#6767E5", tint: "rgba(103,103,229,0.07)", ring: "rgba(103,103,229,0.18)", weeks: buildCourse(2) },
   ];
 
   const cellStyle = (w, c) => {
@@ -1241,7 +1241,7 @@ function ProgramTimeline() {
                 <div style={{ position: 'absolute', left: px(b.start), width: px(DUR), top: 0, height: '100%', borderRadius: '10px', overflow: 'hidden', display: 'flex' }}>
                   {phases.map(p => (
                     <div key={p.label} style={{ width: '33.33%', background: p.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span style={{ ...L, fontSize: '0.68rem', color: 'rgba(255,255,255,0.88)', letterSpacing: '0.03em' }}>{p.label}</span>
+                      <span style={{ ...L, fontSize: '0.6rem', color: 'rgba(255,255,255,0.88)', letterSpacing: '0.01em', textAlign: 'center', lineHeight: 1.2, padding: '0 4px' }}>{p.label}</span>
                     </div>
                   ))}
                 </div>
