@@ -1155,6 +1155,175 @@ Object.assign(window, { Matrix, SkillFirst });
 /* global React, ReactDOM, Cover, Intro, CoverageSummary, Journey, Matrix, SkillFirst, CERT_ORDER */
 // NM Skills Journey — app shell: toolbar, certification filter state, scroll-spy.
 
+function ProgramTimeline() {
+  // ── Batch Gantt ───────────────────────────────────────────────
+  const SPAN = 22; // months: Jan 2027 to Oct 2028
+  const DUR  = 9.69; // 42 weeks in months
+  const px   = (m) => (m / SPAN * 100).toFixed(2) + '%';
+
+  const ticks = [
+    { label: "Jan '27", m: 0 },
+    { label: "Jul '27", m: 6 },
+    { label: "Jan '28", m: 12 },
+    { label: "Jul '28", m: 18 },
+    { label: "Oct '28", m: 21.6 },
+  ];
+
+  const batches = [
+    { label: "Batch 1", sub: "100 participants, 4 cohorts, starting Jan 2027", start: 0 },
+    { label: "Batch 2", sub: "100 participants, 4 cohorts, starting Jul 2027",  start: 6 },
+    { label: "Batch 3", sub: "100 participants, 4 cohorts, starting Jan 2028", start: 12 },
+  ];
+
+  const phases = [
+    { label: "PMC",  color: "#1A2B6B" },
+    { label: "AIPC", color: "#1397A8" },
+    { label: "PLC",  color: "#6767E5" },
+  ];
+
+  // ── Week-by-week detail (Batch 1) ─────────────────────────────
+  // Per course: Train Coach × 6, then Capstone Prep Coaching, then Capstone Demo Day = 14 weeks
+  const buildCourse = (ci) => {
+    const out = [];
+    let wk = ci * 14 + 1;
+    for (let m = 0; m < 6; m++) {
+      out.push({ type: 'train', wk: wk++ });
+      out.push({ type: 'coach', wk: wk++, prep: false });
+    }
+    out.push({ type: 'coach', wk: wk++, prep: true });
+    out.push({ type: 'demo',  wk: wk++ });
+    return out;
+  };
+
+  const courses = [
+    { label: "Course 1: PMC",  span: "Weeks 1–14",   color: "#1A2B6B", tint: "rgba(26,43,107,0.07)",  ring: "rgba(26,43,107,0.18)",  weeks: buildCourse(0) },
+    { label: "Course 2: AIPC", span: "Weeks 15–28",  color: "#1397A8", tint: "rgba(19,151,168,0.07)", ring: "rgba(19,151,168,0.18)", weeks: buildCourse(1) },
+    { label: "Course 3: PLC",  span: "Weeks 29–42",  color: "#6767E5", tint: "rgba(103,103,229,0.07)",ring: "rgba(103,103,229,0.18)",weeks: buildCourse(2) },
+  ];
+
+  const cellStyle = (w, c) => {
+    if (w.type === 'train') return { background: c.color, color: 'rgba(255,255,255,0.92)' };
+    if (w.type === 'coach') return { background: c.tint, color: c.color, border: `1px solid ${c.ring}` };
+    return { background: 'var(--ps-accent1-300)', color: 'var(--ps-primary-500)' };
+  };
+
+  const L = { fontFamily: 'var(--ps-font-secondary)', fontWeight: 700 };
+
+  return (
+    <div>
+
+      {/* ── Part 1: Batch Overview ── */}
+      <div style={{ marginBottom: '44px' }}>
+        <div style={{ ...L, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.09em', color: 'var(--ps-neutral-300)', marginBottom: '18px' }}>
+          All 3 batches · Jan 2027 to Oct 2028
+        </div>
+        {/* Month axis */}
+        <div style={{ marginLeft: '180px' }}>
+          <div style={{ position: 'relative', height: '20px', marginBottom: '6px' }}>
+            {ticks.map(t => (
+              <div key={t.m} style={{ position: 'absolute', left: px(t.m), transform: 'translateX(-50%)' }}>
+                <span style={{ ...L, fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--ps-neutral-300)', whiteSpace: 'nowrap' }}>{t.label}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ height: '1px', background: 'var(--ps-neutral-150)', marginBottom: '14px' }}></div>
+        </div>
+        {/* Rows */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          {batches.map(b => (
+            <div key={b.label} style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ width: '180px', flex: 'none', paddingRight: '20px' }}>
+                <div style={{ ...L, fontSize: '0.82rem', color: 'var(--ps-primary-400)' }}>{b.label}</div>
+                <div style={{ fontSize: '0.68rem', color: 'var(--ps-neutral-300)', marginTop: '3px', lineHeight: 1.4 }}>{b.sub}</div>
+              </div>
+              <div style={{ flex: 1, position: 'relative', height: '50px' }}>
+                <div style={{ position: 'absolute', inset: 0, background: 'var(--ps-neutral-25)', borderRadius: '10px' }}></div>
+                <div style={{ position: 'absolute', left: px(b.start), width: px(DUR), top: 0, height: '100%', borderRadius: '10px', overflow: 'hidden', display: 'flex' }}>
+                  {phases.map(p => (
+                    <div key={p.label} style={{ width: '33.33%', background: p.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span style={{ ...L, fontSize: '0.68rem', color: 'rgba(255,255,255,0.88)', letterSpacing: '0.03em' }}>{p.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Phase legend */}
+        <div style={{ display: 'flex', gap: '20px', marginTop: '14px', marginLeft: '180px' }}>
+          {phases.map(p => (
+            <div key={p.label} style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
+              <div style={{ width: '10px', height: '10px', borderRadius: '2px', background: p.color, flexShrink: 0 }}></div>
+              <span style={{ ...L, fontSize: '0.72rem', color: 'var(--ps-neutral-400)' }}>{p.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Part 2: Batch 1 Week-by-Week ── */}
+      <div style={{ background: 'var(--ps-neutral-25)', border: '1px solid var(--ps-neutral-100)', borderRadius: '14px', padding: '28px 32px' }}>
+        <div style={{ ...L, fontSize: '0.68rem', textTransform: 'uppercase', letterSpacing: '0.09em', color: 'var(--ps-neutral-300)', marginBottom: '22px' }}>
+          Batch 1 in detail · 42 weeks
+        </div>
+
+        {/* Week grid */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          {courses.map((c, ci) => (
+            <div key={c.label}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
+                <span style={{ ...L, fontSize: '0.66rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: c.color }}>{c.label}</span>
+                <span style={{ ...L, fontSize: '0.62rem', color: 'var(--ps-neutral-300)', letterSpacing: '0.04em' }}>{c.span}</span>
+              </div>
+              <div style={{ display: 'flex', gap: '3px' }}>
+                {c.weeks.map((w, wi) => (
+                  <div key={wi} style={{ flex: 1, height: '42px', borderRadius: '5px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', outline: (ci === 0 && (w.wk === 9 || w.wk === 10)) ? '2px solid var(--ps-accent1-300)' : 'none', outlineOffset: '2px', ...cellStyle(w, c) }}>
+                    <span style={{ ...L, fontSize: w.type === 'demo' ? '0.52rem' : '0.6rem', lineHeight: 1, letterSpacing: '0.02em' }}>
+                      {w.type === 'demo' ? 'Capstone\nDemo' : `Wk ${w.wk}`}
+                    </span>
+                    {w.type !== 'demo' && <span style={{ fontSize: '0.48rem', textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '2px', opacity: 0.7, ...L }}>
+                      {w.type === 'train' ? 'Train' : w.prep ? 'Prep' : 'Coach'}
+                    </span>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Example callout anchored to Wk 9 / Wk 10 */}
+        <div style={{ marginTop: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+          <div style={{ background: '#fff', border: '1px solid var(--ps-neutral-100)', borderLeft: '3px solid #1A2B6B', borderRadius: '8px', padding: '16px 18px' }}>
+            <div style={{ ...L, fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.09em', color: '#1A2B6B', marginBottom: '5px' }}>Week 9 · Training Session · 2 hrs</div>
+            <div style={{ ...L, fontSize: '0.96rem', color: 'var(--ps-primary-400)', marginBottom: '4px' }}>Build Effective Product Roadmaps</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--ps-neutral-400)', lineHeight: 1.5 }}>Live session with cohort of 25. Introduces outcome-based roadmapping frameworks applied to real NM product work.</div>
+          </div>
+          <div style={{ background: '#fff', border: '1px solid var(--ps-neutral-100)', borderLeft: '3px solid #1397A8', borderRadius: '8px', padding: '16px 18px' }}>
+            <div style={{ ...L, fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.09em', color: '#1397A8', marginBottom: '5px' }}>Week 10 · Coaching Session · 1 hr</div>
+            <div style={{ ...L, fontSize: '0.96rem', color: 'var(--ps-primary-400)', marginBottom: '4px' }}>Building Outcome-Based Roadmaps</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--ps-neutral-400)', lineHeight: 1.5 }}>Group coaching for the full batch of 100. Tied directly to the Week 9 module and milestone work toward the Capstone Demo Day.</div>
+          </div>
+        </div>
+
+        {/* Legend */}
+        <div style={{ display: 'flex', gap: '24px', marginTop: '18px', paddingTop: '16px', borderTop: '1px solid var(--ps-neutral-100)', flexWrap: 'wrap', alignItems: 'center' }}>
+          {[
+            { label: 'Training Session (2 hrs, cohort of 25)',     bg: '#1A2B6B',                  border: false },
+            { label: 'Coaching Session (1 hr, full batch of 100)', bg: 'rgba(26,43,107,0.07)',      border: 'rgba(26,43,107,0.25)' },
+            { label: 'Capstone Demo Day (2 hrs, cohort of 25)',    bg: 'var(--ps-accent1-300)',     border: false },
+            { label: 'Highlighted = example weeks',                bg: 'transparent',               border: false, outline: '2px solid var(--ps-accent1-300)' },
+          ].map(item => (
+            <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ width: '13px', height: '13px', borderRadius: '3px', background: item.bg, border: item.border ? `1px solid ${item.border}` : 'none', outline: item.outline || 'none', outlineOffset: '1px', flexShrink: 0 }}></div>
+              <span style={{ ...L, fontSize: '0.76rem', color: 'var(--ps-neutral-400)' }}>{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
 function ProposalView() {
   return (
     <div className="prop-wrap">
@@ -1348,7 +1517,7 @@ function ProposalView() {
             </tbody>
           </table>
           <div className="prop-incl">
-            <strong>Included at no additional cost:</strong> session recordings and on-demand access to all program content.
+            <strong>Included at no additional cost:</strong> on-demand access to all program content and LMS.
           </div>
         </div>
 
@@ -1366,6 +1535,13 @@ function ProposalView() {
               <div className="denom">Total investment</div>
             </div>
           </div>
+        </div>
+
+        <div className="prop-sec">
+          <p className="sec-eyebrow">Program Timeline</p>
+          <h2 className="sec-title">What the program looks like in practice</h2>
+          <p className="sec-lede">Three batches of 100, each running 42 weeks. Training every other week, coaching in between, and a Capstone Demo Day at the close of each course.</p>
+          <ProgramTimeline />
         </div>
 
         <footer className="report-foot">
